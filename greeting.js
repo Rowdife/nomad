@@ -1,10 +1,18 @@
 const form = document.querySelector(".js-form"),
   input = form.querySelector("input"),
   greeting = document.querySelector(".js-greetings"),
-  clear = document.querySelector("button");
+  clear = document.querySelector(".js-button");
 
 const USER_LS = "currentUser",
   SHOWING_CN = "showing";
+
+function clearName1(){
+  localStorage.removeItem("currentUser");
+}
+
+function clearName2(){
+  clear.addEventListener(submit, clearName1);
+}
 
 function saveName(text) {
   localStorage.setItem(USER_LS, text);
